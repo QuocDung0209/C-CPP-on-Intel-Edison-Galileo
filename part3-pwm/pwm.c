@@ -22,8 +22,19 @@
  */
 
 #include <mraa.h>
+#include <signal.h>
+
 
 #define PWM_PIN      5        /**< The pin where the LED is connected */
+
+volatile int keepRunning;
+
+/** Signal handler used to stop this application cleanly */
+void handler(int arg)
+{
+    (arg);
+    keepRunning = 0;
+}
 
 
 int main(void)
@@ -69,7 +80,15 @@ int main(void)
     delta = 0.05;   /* Variation on the duty cycle */
     duty = 0;       /* 0% duty cycle */
     
-    while (1)
+    keepRunning = 1;
+    
+    /* 
+     * Associate ctrl+c with our handler that clears the 'keepRunning'
+     * flag that allows us to stop the PWM when exiting 
+     */
+    signal(SIGINT, handler);
+    
+    while (keepRunning)
     {
         if (duty >= 1)
         {
@@ -110,6 +129,9 @@ int main(void)
         
         duty = duty + delta;
     }
+    
+    /* Step6: Stop the PWM when not required */
+    mraa_pwm_enable(pwmPin, 0);
         
     return 0;
 }
