@@ -3,7 +3,7 @@
  * This is a 'c' program that demos the usage of the mraa library 
  * to set up and use PWM Intel Edison/Galileo.
  * The intensity with which the LED connected to port D5 glows is 
- * controlled
+ * controlled in this program.
  * 
  * setup:
  * The LED is connected to port D5
