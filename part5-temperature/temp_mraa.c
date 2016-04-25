@@ -52,7 +52,7 @@ int main(void)
     temperature = 1.0/(log(R/100000.0)/B+1/298.15)-273.15;
 
     /* Step5: Print the temperature */
-    printf ("The temperature is %f \n", temperature);
+    printf ("The temperature is %0.2f degree Celcius\n", temperature);
 
 
     return 0;
