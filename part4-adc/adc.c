@@ -20,7 +20,8 @@
  * You can exit this demo by hitting ctrl+c
  * 
  * You can find the tutorial related to this program here:
- * 
+ * https://navinbhaskar.wordpress.com/2016/04/25/cc-on-intel-edisongalileo-part4adc/ 
+ *
  */
 
 #include <mraa.h>
