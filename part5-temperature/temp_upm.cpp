@@ -29,15 +29,15 @@
 
 int main(void)
 {
-	int temperature;
-	
-	/* Step2: Instantiate an instance of Grove temperature sensor */
-	upm::GroveTemp *temp = new upm::GroveTemp(TEMP_ADC_PIN);
-	
-	/* Step3: Record the temperature and print */
-	temperature = temp->value();
-	printf ("The temperature is %d degree Celcius\n", temperature);
-	
+    int temperature;
+    
+    /* Step2: Instantiate an instance of Grove temperature sensor */
+    upm::GroveTemp *temp = new upm::GroveTemp(TEMP_ADC_PIN);
+    
+    /* Step3: Record the temperature and print */
+    temperature = temp->value();
+    printf ("The temperature is %d degree Celcius\n", temperature);
+    
     return 0;
 }
 
